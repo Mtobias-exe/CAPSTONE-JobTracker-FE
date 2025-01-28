@@ -57,3 +57,6 @@ const jobDataModel = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("JobData", jobDataModel);
+
+
+
