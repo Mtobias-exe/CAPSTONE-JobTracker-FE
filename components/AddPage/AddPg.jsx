@@ -1,7 +1,8 @@
 import React, { useState} from 'react'
 import './AddPg.css'
+import serviceCall, {ACTIONS} from '../../services/apiServices';
 
-const AddPg = () => {
+const AddPg = ({entry, setEntry}) => {
    const [formData, setFormData] = useState({
       companyName: '',
       jobTitle: '',
@@ -14,9 +15,27 @@ const AddPg = () => {
     setFormData({ [e.target.name]: e.target.value });
   }
   
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try{
+      let res = await serviceCall(ACTIONS.create, formData);
+      setEntry([res, ...entry]);
+
+      setFormData({
+      companyName: '',
+      jobTitle: '',
+      date: '',
+      status: '',
+      notes: ''
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   return (
     <section>
-    <form>
+    <form onSubmit={handleSubmit}>
      
     <label htmlFor="companyName">Company Name</label>
       <input
@@ -24,6 +43,7 @@ const AddPg = () => {
       id='companyName'
       name='companyName'
       value={formData.companyName}
+      onChange={handleChange}
       />
       
       <label htmlFor="jobTitle">Job Title</label>
@@ -32,6 +52,7 @@ const AddPg = () => {
        id='jobTitle'
        name='jobTitle'
        value={formData.jobTitle}
+       onChange={handleChange}
       />
       
       <label htmlFor="date">Date</label>
@@ -40,13 +61,15 @@ const AddPg = () => {
        id='date'
        name='date'
        value={formData.date}
+       onChange={handleChange}
       />
 
       <label htmlFor="status">Status</label>
       <select
        id='status'
-       name='date'
+       name='status'
        value={formData.status}
+       onChange={handleChange}
       >
       <option value="pending">Pending</option>
       <option value="rejected">Rejected</option>
@@ -59,7 +82,14 @@ const AddPg = () => {
        id='note'
        name='note'
        value={formData.notes}
+       onChange={handleChange}
       />
+
+      <button
+      type='submit'
+      >
+      +
+      </button>
 
     </form>
     </section>
