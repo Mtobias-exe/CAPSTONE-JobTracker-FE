@@ -6,7 +6,7 @@ function LandingPg() {
   return (
     <>
     {/* Nav bar component */}
-        <Navbar/>
+      
         <section className='hero'>
             <div className='hero-container'>
                 <div className='column-left'>
