@@ -20,7 +20,7 @@ const AddPg = () => {
     try{
       let res = await serviceCall(ACTIONS.create, formData);
       console.log("Response received:", res); 
-      // setEntry([res, ...entry]);
+      // SetEntry([res, ...entry]);
 
       setFormData({
       companyName: '',
