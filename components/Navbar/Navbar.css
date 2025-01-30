@@ -10,6 +10,7 @@
 .nav-links{
     display: flex;
     list-style: none;
+    
    
 }
 
@@ -18,5 +19,9 @@ nav a{
     text-decoration: none;
     color: rgb(255, 255, 255);
     padding: 0 1.5rem;
+}
+
+nav a:hover{
+    color:#bc87d1;
 }
 

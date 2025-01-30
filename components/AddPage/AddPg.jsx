@@ -2,17 +2,17 @@ import React, { useState} from 'react'
 import './AddPg.css'
 import serviceCall, {ACTIONS} from '../../services/apiServices';
 
-const AddPg = ({entry, setEntry}) => {
+const AddPg = () => {
    const [formData, setFormData] = useState({
       companyName: '',
       jobTitle: '',
       date: '',
-      status: '',
+      status: 'pending',
       notes: ''
   });
 
   function handleChange(e) {
-    setFormData({ [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
   
   async function handleSubmit(e) {
@@ -20,7 +20,7 @@ const AddPg = ({entry, setEntry}) => {
     try{
       let res = await serviceCall(ACTIONS.create, formData);
       console.log("Response received:", res); 
-      setEntry([res, ...entry]);
+      // setEntry([res, ...entry]);
 
       setFormData({
       companyName: '',
@@ -80,8 +80,8 @@ const AddPg = ({entry, setEntry}) => {
       <label htmlFor="note">Notes</label>
       <input
        type='text'
-       id='note'
-       name='note'
+       id='notes'
+       name='notes'
        value={formData.notes}
        onChange={handleChange}
       />
