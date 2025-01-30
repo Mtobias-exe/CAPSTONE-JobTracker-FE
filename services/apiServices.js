@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios';
 
 export const ACTIONS = {
     create: 'create',
@@ -22,3 +22,38 @@ export default async function serviceCall(action, formData, id) {
     }
 }
 
+async function readJob(url) {
+    try {
+       let res = await axios.get(url);
+       return res.data; 
+    } catch (err) {
+       console.error(err);
+    }
+}
+
+async function createJob(url, formData) {
+    try {
+        const res = await axios.post(url, formData);
+        return res.data;
+    } catch (err) {
+        console.error(err);  
+    }
+}
+
+async function updateJob(url, id, formData) {
+    try {
+        let res = await axios.put(`${url}/${id}` , formData);
+        return res.data;
+    } catch (err) {
+        console.error(err);  
+    }
+}
+
+async function deleteJob(url, id) {
+    try {
+        let res = await axios.delete(`${url}/${id}`);
+        return res.data;
+    } catch (err) {
+        console.error(err);  
+    }
+}

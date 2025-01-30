@@ -19,6 +19,7 @@ const AddPg = ({entry, setEntry}) => {
     e.preventDefault();
     try{
       let res = await serviceCall(ACTIONS.create, formData);
+      console.log("Response received:", res); 
       setEntry([res, ...entry]);
 
       setFormData({
@@ -29,7 +30,7 @@ const AddPg = ({entry, setEntry}) => {
       notes: ''
       });
     } catch (err) {
-      console.error(err);
+      console.error("theres an error with submission:", err);
     }
   }
 
