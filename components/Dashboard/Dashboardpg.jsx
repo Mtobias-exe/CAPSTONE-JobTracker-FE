@@ -1,4 +1,4 @@
-import AddPg from '../AddPage/AddPg'
+
 import './Dashboardpg.css'
 import React, { useEffect, useState } from 'react'
 import serviceCall, {ACTIONS} from '../../services/apiServices'
@@ -24,17 +24,19 @@ function Dashboardpg() {
   function renderJobs() {
     if (jobs.length > 0) {
       return (
-        <ul>
+        <table>
+        <tbody>
           {jobs.map((job, index) => (
-            <li key={index}>
-              <p>{job.companyName}</p>
-              <p>{job.jobTitle}</p>
-              <p>{job.date}</p>
-              <p>{job.status}</p>
-              <p>{job.notes}</p>
-            </li>
+            <tr key={index}>
+              <td>{job.companyName}</td>
+              <td>{job.jobTitle}</td>
+              <td>{job.date}</td>
+              <td>{job.status}</td>
+              <td>{job.notes}</td>
+            </tr>
           ))}
-        </ul>
+        </tbody>
+      </table>
       );
     } else {
       return <p>No job applications found</p>; 
@@ -48,8 +50,18 @@ function Dashboardpg() {
       <button>Add Job</button>
     </Link>
       <div className='dashboard-container'>
-        <div className='title'>
-
+        <div className='title-container'>
+        <table>
+          <thead>
+            <tr className='title-list'>
+              <th>Company Name</th>
+              <th>Job Title</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+        </table>
         </div>
 
         <div className='job-list'>

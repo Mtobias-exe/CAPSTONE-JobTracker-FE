@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import './AddPg.css'
 import serviceCall, {ACTIONS} from '../../services/apiServices';
+import { Link } from 'react-router-dom';
 
 const AddPg = () => {
    const [formData, setFormData] = useState({
@@ -89,10 +90,14 @@ const AddPg = () => {
       <button
       type='submit'
       >
-      +
+      Submit
       </button>
 
     </form>
+
+    <Link to="/dashboard">
+    <button>Done</button>
+    </Link>
     </section>
   )
 }

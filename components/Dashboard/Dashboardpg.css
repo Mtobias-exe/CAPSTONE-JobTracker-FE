@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+  
+  table {
+    width: 70%;
+    border-collapse: collapse; 
+    
+    
+   
+    
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 2rem; 
+    border-bottom: 1px solid #ddd; 
+   
+  }
+
+  th{
+    padding:  2rem; 
+    
+    
+  }
+  
+  
+  
+  .title-list {
+    background-color: #A465BD; 
+    color: white;
+    font-weight: bold;
+  }
+
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+}
+
+  
+
+
