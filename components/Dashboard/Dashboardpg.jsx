@@ -2,6 +2,7 @@ import AddPg from '../AddPage/AddPg'
 import './Dashboardpg.css'
 import React, { useEffect, useState } from 'react'
 import serviceCall, {ACTIONS} from '../../services/apiServices'
+import { Link } from 'react-router-dom'
 
 
 function Dashboardpg() {
@@ -42,10 +43,22 @@ function Dashboardpg() {
 
   return (
     <>
-    
-    <button>Add Job</button>
-    {renderJobs()}
-    
+    <section className='dashboard'>
+    <Link to="/addjob">
+      <button>Add Job</button>
+    </Link>
+      <div className='dashboard-container'>
+        <div className='title'>
+
+        </div>
+
+        <div className='job-list'>
+          {renderJobs()}
+        </div>
+
+      </div>
+
+    </section>
     </>
   )
 }
