@@ -33,6 +33,13 @@ function Dashboardpg() {
               <td>{job.date}</td>
               <td>{job.status}</td>
               <td>{job.notes}</td>
+              <td>
+                <Link to={`/edit/${job._id}`}>
+                <button>Update</button>
+                </Link>
+
+                <button>Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>
