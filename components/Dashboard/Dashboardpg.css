@@ -1,43 +1,82 @@
 *{
     margin: 0;
     padding: 0;
+
+    box-sizing: border-box;
 }
   
-  table {
-    width: 70%;
-    border-collapse: collapse; 
-    
-    
-   
-    
-  }
+body{
+  height: 100vh;
+  
+ 
+}
+
+.table-body{
+  display: flex;
+  justify-content: center;
+}
   
   th, td {
-    text-align: center;
     padding: 2rem; 
     border-bottom: 1px solid #ddd; 
+    
+    
    
   }
 
-  th{
-    padding:  2rem; 
-    
-    
-  }
+.content-table{
+   border-collapse: collapse; 
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
   
-  
-  
-  .title-list {
-    background-color: #A465BD; 
-    color: white;
-    font-weight: bold;
-  }
-
-.dashboard-container{
-    display: flex;
-    flex-direction: column;
+.content-table thead tr {
+  text-align: left;
+  background-color: #A465BD; 
+  color: white;
+   font-weight: bold;
 }
 
+
+.edit-icon{
+  width: 20px;
+  height: 16px;
   
+}
+
+.edit{
+   border-radius: 50%;
+   width: 30px;
+   height: 30px;
+   border: none;
+   cursor: pointer;
+   background-color: #ffffff;
+   transition: background-color 0.3s ease;
+   margin-right: 12px;
+}
+
+.edit:hover {
+  background-color: #f1caf1; 
+}
 
 
+.delete-icon{
+  width: 20px;
+  height: 16px;
+}
+
+.delete{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.delete:hover {
+  background-color: #f1cad0; 
+}
