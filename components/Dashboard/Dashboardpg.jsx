@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 function Dashboardpg() {
   const [jobs, setJobs] = useState([]);
+  
 
   useEffect(() => {
     async function getData() {
@@ -20,6 +21,18 @@ function Dashboardpg() {
 
     getData(); 
   }, []); 
+
+ async function handleDelete(_id){
+    try {
+      await serviceCall(ACTIONS.delete, null, _id)
+      
+      let updatedJobs = jobs.filter( job => job._id !== _id)
+      setJobs(updatedJobs)
+      
+    } catch (error) {
+      console.error("Failed to delete job:", error);
+    }
+  } 
 
   function renderJobs() {
     if (jobs.length > 0) {
@@ -38,7 +51,7 @@ function Dashboardpg() {
                 <button>Update</button>
                 </Link>
 
-                <button>Delete</button>
+                <button onClick={() => handleDelete(job._id)}>Delete</button>
               </td>
             </tr>
           ))}
@@ -49,6 +62,8 @@ function Dashboardpg() {
       return <p>No job applications found</p>; 
     }
   }
+
+  
 
   return (
     <>
