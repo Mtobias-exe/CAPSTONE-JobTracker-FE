@@ -14,7 +14,7 @@ export default async function serviceCall(action, formData, id) {
         case ACTIONS.create:
             return createJob(url, formData);
         case ACTIONS.read:
-            return readJob(url);
+            return id ? readJobById(url, id) : readJob(url);
         case ACTIONS.update:
             return updateJob(url, id, formData);
         case ACTIONS.delete:
@@ -28,6 +28,15 @@ async function readJob(url) {
        return res.data; 
     } catch (err) {
        console.error(err);
+    }
+}
+
+async function readJobById(url, id) {
+    try {
+        let res = await axios.get(`${url}/${id}`)
+        return res.data
+    } catch (err) {
+        console.error(err); 
     }
 }
 

@@ -17,8 +17,16 @@ const EditPg = () => {
   useEffect(() => {
     async function fetchJob() {
       try {
-        const data = await serviceCall(ACTIONS.read, formData, id);
-        setFormData(data);
+        const data = await serviceCall(ACTIONS.read, {}, id);
+        if (data) {
+          setFormData({
+            companyName: data.companyName,
+            jobTitle: data.jobTitle,
+            date: data.date,
+            status: data.status || 'pending',
+            notes: data.notes || ''
+          });
+        }
       } catch (error) {
         console.error('Failed to fetch job details:', error);
       }
