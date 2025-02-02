@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import serviceCall, { ACTIONS } from '../../services/apiServices';
 import './EditPg.css';
+import deleteIcon from '/delete.jpg'
 
 const EditPg = () => {
   const { id } = useParams();
@@ -46,7 +47,14 @@ const EditPg = () => {
   }
 
   return (
-    <section>
+    <section className='form-body'>
+
+    <div className='form-container'>
+      <div className='done-container'>
+        <Link to="/dashboard">
+        <button className='done'><img src={deleteIcon} className='delete-icon'></img></button>
+      </Link>
+      </div>
       <form onSubmit={handleUpdate}>
         <label htmlFor="companyName">Company Name</label>
         <input type='text' id='companyName' name='companyName' value={formData.companyName} onChange={handleChange} />
@@ -67,12 +75,11 @@ const EditPg = () => {
         <label htmlFor="notes">Notes</label>
         <input type='text' id='notes' name='notes' value={formData.notes} onChange={handleChange} />
 
-        <button type='submit'>Update</button>
+        <button type='submit' className='submit'>UPDATE</button>
       </form>
 
-      <Link to="/dashboard">
-        <button>Done</button>
-      </Link>
+      
+      </div>
     </section>
   );
 }

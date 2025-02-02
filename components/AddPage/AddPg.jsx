@@ -2,6 +2,7 @@ import React, { useState} from 'react'
 import './AddPg.css'
 import serviceCall, {ACTIONS} from '../../services/apiServices';
 import { Link } from 'react-router-dom';
+import deleteIcon from '/delete.jpg'
 
 const AddPg = () => {
    const [formData, setFormData] = useState({
@@ -41,7 +42,7 @@ const AddPg = () => {
     <div className='form-container'>
     <div className='done-container'>
     <Link to="/dashboard">
-              <button className='done'>X</button>
+              <button className='done'><img src={deleteIcon} className='delete-icon'></img></button>
           </Link>
      </div> 
     <form onSubmit={handleSubmit}>

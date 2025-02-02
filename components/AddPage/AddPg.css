@@ -44,29 +44,53 @@ padding: 8rem calc((100vw - 1300px)/2);
     box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.233);
 }
 
-.submit, .done{
+.submit{
     width: 20%;
     height: 30px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.151);
 }
 
 .submit{
     margin-top: 13px;
-    background-color: #87dd8a98;
+    background-color: #87dd8a;
     color: white;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover{
+    background-color: #87dd8a7e;
 }
 
 .done-container {
     position: absolute;
     top: 14px;
     right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .done{
     padding: 5px 15px;
     border-radius: 50%;
-    width: auto;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.151);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.delete-icon{
+    width: 20px;
+    height: 16px;
+  }
+
+.done:hover{
+    background-color: rgba(0, 0, 0, 0.089);
 }
