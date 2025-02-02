@@ -36,7 +36,14 @@ const AddPg = () => {
   }
 
   return (
-    <section>
+    <section className='form-body'>
+    
+    <div className='form-container'>
+    <div className='done-container'>
+    <Link to="/dashboard">
+              <button className='done'>X</button>
+          </Link>
+     </div> 
     <form onSubmit={handleSubmit}>
      
     <label htmlFor="companyName">Company Name</label>
@@ -89,15 +96,13 @@ const AddPg = () => {
 
       <button
       type='submit'
-      >
-      Submit
+      className='submit'>
+      SUBMIT
       </button>
-
+     
     </form>
 
-    <Link to="/dashboard">
-    <button>Done</button>
-    </Link>
+   </div>
     </section>
   )
 }

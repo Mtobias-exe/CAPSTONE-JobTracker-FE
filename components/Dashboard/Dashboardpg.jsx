@@ -3,8 +3,8 @@ import './Dashboardpg.css'
 import React, { useEffect, useState } from 'react'
 import serviceCall, {ACTIONS} from '../../services/apiServices'
 import { Link } from 'react-router-dom'
-import editIcon from '/public/edit.png'
-import deleteIcon from '/public/delete.jpg'
+import editIcon from '/edit.png'
+import deleteIcon from '/delete.jpg'
 
 
 function Dashboardpg() {
@@ -85,17 +85,19 @@ function Dashboardpg() {
   return (
     <>
     <section className='dashboard'>
-   
+      <div className='dashboard-container'>
       
-      
+      <div className='add-container'>
       <Link to="/addjob">
-            <button>Add Job</button>
+            <button className='add'>Add Job</button>
       </Link>
+      </div>
+
         <div >
           {renderJobs()}
         </div>
       
-      
+      </div>
 
     </section>
     </>
