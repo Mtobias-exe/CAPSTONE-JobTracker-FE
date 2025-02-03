@@ -5,12 +5,12 @@ import serviceCall, {ACTIONS} from '../../services/apiServices'
 import { Link } from 'react-router-dom'
 import editIcon from '/edit.png'
 import deleteIcon from '/delete.jpg'
+import AddPg from '../AddPage/AddPg'
 
 
 function Dashboardpg() {
   const [jobs, setJobs] = useState([]);
   
-
   useEffect(() => {
     async function getData() {
       try {
@@ -36,6 +36,12 @@ function Dashboardpg() {
     }
   } 
 
+  const statusColor = {
+    pending: '#B5B4B4',
+    rejected: '#D87D7D',
+    accepted: '#ADE08D'
+  }
+
   function renderJobs() {
     if (jobs.length > 0) {
       return (
@@ -58,7 +64,9 @@ function Dashboardpg() {
               <td>{job.companyName}</td>
               <td>{job.jobTitle}</td>
               <td>{job.date}</td>
-              <td className='status'>{job.status}</td>
+              <td>
+                <span style={{background: statusColor[job.status]}} className='status-color'>{job.status}</span>
+              </td>
               <td>{job.notes}</td>
               <td>
                 <Link to={`/edit/${job._id}`}>
@@ -98,7 +106,6 @@ function Dashboardpg() {
         </div>
       
       </div>
-
     </section>
     </>
   )
