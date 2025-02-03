@@ -50,11 +50,12 @@ padding: 8rem calc((100vw - 1300px)/2);
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .submit{
     margin-top: 13px;
-    background-color: #87dd8a;
+    background-color: #559957;
     color: white;
     transition: background-color 0.3s ease;
 }

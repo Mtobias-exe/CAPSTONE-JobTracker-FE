@@ -1,6 +1,7 @@
 import './LandingPg.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import jtPic from '/jobtracker.png'
 
 function LandingPg() {
   return (
@@ -24,7 +25,7 @@ function LandingPg() {
         </section>
         <section className='demo'>
             <div className='demo-container'>
-                {/* Preview of Dashboard */}
+                <img src={jtPic} className='demo-pic' alt='demo'/>
             </div>
         </section>
     </>
