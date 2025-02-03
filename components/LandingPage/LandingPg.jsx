@@ -2,6 +2,8 @@ import './LandingPg.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import jtPic from '/jobtracker.png'
+import demovid from '/demo.gif'
+import scroll from '/scroll2.gif'
 
 function LandingPg() {
   return (
@@ -23,9 +25,13 @@ function LandingPg() {
                 </div>
             </div>
         </section>
+        <div className='scroll-container'>
+            <img src={scroll} alt="scroll down" />
+        </div>
         <section className='demo'>
             <div className='demo-container'>
-                <img src={jtPic} className='demo-pic' alt='demo'/>
+                {/* <img src={jtPic} className='demo-pic' alt='demo'/> */}
+                <img src={demovid} className='demo-vid' alt='demo video'/>
             </div>
         </section>
     </>

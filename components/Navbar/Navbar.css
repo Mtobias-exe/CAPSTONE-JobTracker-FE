@@ -5,6 +5,7 @@
     justify-content: flex-end;
     align-items: center;
     padding: 0rem calc((100vw - 1300px)/2);
+    justify-content: space-between;
   
 }
 
@@ -26,3 +27,12 @@ nav a:hover{
     color:#bc87d1;
 }
 
+.navbar-left{
+    display: flex;
+   
+}
+.logo{
+    height: 40px;
+    padding: 0 2rem;
+    
+}
