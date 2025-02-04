@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: Lato;
+    
 }
 
 h1, p{ 
@@ -69,13 +70,14 @@ p{
 
 
 .demo{
-    margin-top: 11rem;
+    margin-top: 9rem;
 }
 
 .demo-container{
     display: flex;
     padding: 4rem calc((100vw - 1300px)/2);
     justify-content: center;
+    
     
 }
 
@@ -92,12 +94,26 @@ p{
     height: 100%;
     width: 100%;
     padding: 20px;
-    background-color: #5C366B;
-    border-radius: 10px;
+    background-color: #dce0e0;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .scroll-container{
     display: flex;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top: 5rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scrollIcon{
+    height: 100px;
+    width: 100px;
+}
+
+.instruction{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
 }

@@ -1,15 +1,12 @@
 import './LandingPg.css';
-import React from 'react';
 import { Link } from 'react-router-dom';
-import jtPic from '/jobtracker.png'
 import demovid from '/demo.gif'
-import scroll from '/scroll2.gif'
+
 
 function LandingPg() {
+ 
   return (
     <>
-    {/* Nav bar component */}
-      
         <section className='hero'>
             <div className='hero-container'>
                 <div className='column-left'>
@@ -25,12 +22,15 @@ function LandingPg() {
                 </div>
             </div>
         </section>
+        
         <div className='scroll-container'>
-            <img src={scroll} alt="scroll down" />
+            
+            <p className='instruction'>Demo Below</p>
+            
+            <img src='/scroll-down.png' alt="scroll down" className='scrollIcon'/>
         </div>
         <section className='demo'>
             <div className='demo-container'>
-                {/* <img src={jtPic} className='demo-pic' alt='demo'/> */}
                 <img src={demovid} className='demo-vid' alt='demo video'/>
             </div>
         </section>
