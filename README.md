@@ -23,7 +23,8 @@ The job tracker app consist of the following 4 pages:
 - Form to add job application details (CREATE)
 
 
-# No API atm
+# Backend Repo Link
+https://github.com/Mtobias-exe/CAPSTONE-JobTracker-BE.git
 
 # Model Schema 
 
@@ -57,6 +58,15 @@ const jobDataModel = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("JobData", jobDataModel);
+
+# Website Link
+
+
+# Instructions 
+1. git clone <url repo-url>
+2. cd <project-folder-name>
+3. npm i - to install all packages
+4. npm run dev - to run application
 
 
 
