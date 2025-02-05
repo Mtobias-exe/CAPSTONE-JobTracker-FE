@@ -1,10 +1,28 @@
 import './LandingPg.css';
 import { Link } from 'react-router-dom';
 import demovid from '/demo.gif'
+import { useEffect, useState } from 'react';
 
 
 function LandingPg() {
- 
+    const [show, setShow] = useState(true);
+    const [lastScrollY, setLastScrollY]= useState(0);
+
+    const controlScroll = () => {
+        if (window.scrollY > lastScrollY) {
+            setShow(false);
+        } else {
+            setShow(true);
+        }
+        setLastScrollY(window.scrollY);
+    };
+    useEffect(() => {
+        window.addEventListener("scroll", controlScroll);
+
+        return() => {
+            window.removeEventListener('scroll', controlScroll);
+        }
+    }, [lastScrollY])
   return (
     <>
         <section className='hero'>
@@ -23,7 +41,7 @@ function LandingPg() {
             </div>
         </section>
         
-        <div className='scroll-container'>
+        <div className={`scroll-container ${show ? "visible" : "hidden"}` }>
             
             <p className='instruction'>Demo Below</p>
             

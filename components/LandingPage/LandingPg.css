@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     font-family: Lato;
+  
+}
+
+body{
+    overflow-x: hidden; 
     
 }
 
@@ -70,7 +75,8 @@ p{
 
 
 .demo{
-    margin-top: 9rem;
+    margin-top: 8rem;
+
 }
 
 .demo-container{
@@ -105,6 +111,12 @@ p{
     margin-top: 5rem;
     flex-direction: column;
     align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-container.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .scrollIcon{
