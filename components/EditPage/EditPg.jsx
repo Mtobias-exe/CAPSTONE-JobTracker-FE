@@ -44,8 +44,6 @@ const EditPg = () => {
     try {
       const updatedData = await serviceCall(ACTIONS.update, formData, id);
       if (updatedData) {
-        alert('Update successful'); 
-       
         setFormData(updatedData);
       }
     } catch (error) {
