@@ -8,7 +8,7 @@ export const ACTIONS = {
 }
 
 export default async function serviceCall(action, formData, id) {
-    const url = 'http://localhost:3001/api/jobtracker';
+    const url = 'https://capstone-jobtracker-be.onrender.com/api/jobtracker';
 
     switch (action){
         case ACTIONS.create:
