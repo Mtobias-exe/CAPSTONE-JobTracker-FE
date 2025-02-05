@@ -7,7 +7,7 @@
 
 body{
     overflow-x: hidden; 
-    
+
 }
 
 h1, p{ 
@@ -75,16 +75,13 @@ p{
 
 
 .demo{
-    margin-top: 8rem;
-
+    margin-top: 6rem;
 }
 
 .demo-container{
     display: flex;
     padding: 4rem calc((100vw - 1300px)/2);
     justify-content: center;
-    
-    
 }
 
 /* .demo-pic{
@@ -108,7 +105,7 @@ p{
 .scroll-container{
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 6rem;
     flex-direction: column;
     align-items: center;
     transition: opacity 0.3s ease-in-out;

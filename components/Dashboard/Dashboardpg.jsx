@@ -63,7 +63,7 @@ function Dashboardpg() {
             <tr key={index}>
               <td>{job.companyName}</td>
               <td>{job.jobTitle}</td>
-              <td>{job.date}</td>
+              <td>{new Date(job.date).toLocaleDateString()}</td>
               <td>
                 <span style={{background: statusColor[job.status]}} className='status-color'>{job.status}</span>
               </td>
